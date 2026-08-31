@@ -4,17 +4,18 @@ import nltk
 from nltk.corpus import stopwords
 from nltk import word_tokenize
 from nltk.stem import PorterStemmer
+# Download NLTK resources
 nltk.download("stopwords")
 nltk.download("punkt")
 nltk.download("punkt_tab")
 import re
 import string
 
-# model =joblib.load(r'E:\PYTHON\spam_mnb_model.pkl')
-# vector=joblib.load('E:\PYTHON\count_vectorizer.pkl')
+#import the model and count vectorizer
 model = joblib.load("spam_mnb_model.pkl")
 vector = joblib.load("count_vectorizer.pkl")
 st.header('EMAIL/SMS SPAM CLASSIFIER')
+#using the nltk library 
 porter=PorterStemmer()
 stop_word=set(stopwords.words('english'))
 user_input=st.text_area('enter you email')
@@ -34,8 +35,8 @@ def tranform_text(text):
 
 if st.button('predict'):
  tranform_input=tranform_text(user_input)
- dense_form=vector.transform([tranform_input])
- prediction=model.predict(dense_form)
+ input_vector=vector.transform([tranform_input])  # Convert text into numerical features
+ prediction=model.predict(input_vector)
 
  if prediction[0]==1:
    st.write('🚨ITS A SPAM')
