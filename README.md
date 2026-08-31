@@ -53,34 +53,4 @@ The project includes a Streamlit interface where users can enter an email or SMS
 * 🚨 **SPAM** — The message is classified as spam.
 * ✅ **NOT SPAM** — The message is classified as legitimate.
 
-## Project Structure
-
-```text
-EMAIL_CLF/
-│
-├── MY_PROJECT.py
-├── spam_mnb_model.pkl
-├── count_vectorizer.pkl
-├── requirements.txt
-└── README.md
-```
-
-## How to Run
-
-Clone the repository and navigate to the project directory.
-
-```bash
-pip install -r requirements.txt
-```
-
-Run the Streamlit application:
-
-```bash
-streamlit run MY_PROJECT.py
-```
-
-The application will open in your browser.
-
-## Purpose
-
 This project demonstrates the application of **Machine Learning, Natural Language Processing, hyperparameter optimization, and Streamlit** to build an end-to-end spam classification system.
